@@ -1,0 +1,21 @@
+apiVersion: skaffold/v2beta29
+kind: Config
+metadata:
+  name: testkube-flux2-receiver
+
+build:
+  tagPolicy:
+    gitCommit: {}
+  artifacts:
+    - image: lreimer/testkube-flux2-receiver
+      docker:
+        dockerfile: Dockerfile
+  local:
+    push: true
+    useBuildkit: true
+    useDockerCLI: false
+
+deploy:
+  kustomize:
+    defaultNamespace: testkube
+    paths: ["k8s"]

@@ -1,0 +1,26 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: testkube-flux2-receiver
+  namespace: testkube
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: testkube-flux2-receiver
+  template:
+    metadata:
+      labels:
+        app: testkube-flux2-receiver
+    spec:
+      serviceAccountName: testkube-flux2-receiver
+      containers:
+      - name: testkube-flux2-receiver
+        image: lreimer/testkube-flux2-receiver
+        resources:          
+          requests: 
+            memory: "64Mi"
+            cpu: 100m
+          limits:
+            memory: "64Mi"
+            cpu: 100m
