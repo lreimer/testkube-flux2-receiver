@@ -48,5 +48,12 @@ const (
 )
 
 func ProcessEvent(c *fiber.Ctx) error {
-	return nil
+	event := new(Event)
+	if err := c.BodyParser(event); err != nil {
+		return c.Status(400).JSON(err.Error())
+	}
+
+	// TODO
+
+	return c.Status(200).SendString("")
 }
