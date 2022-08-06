@@ -1,6 +1,8 @@
 package main
 
-import "github.com/gofiber/fiber/v2"
+import (
+	"github.com/gofiber/fiber/v2"
+)
 
 var version = ""
 var commit = ""
@@ -11,6 +13,8 @@ func main() {
 	app.Get("/version", func(c *fiber.Ctx) error {
 		return c.JSON(map[string]string{"version": version, "commit": commit})
 	})
+
+	app.Post("/event", ProcessEvent)
 
 	app.Listen(":8080")
 }
