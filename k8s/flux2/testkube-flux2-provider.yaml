@@ -1,0 +1,8 @@
+apiVersion: notification.toolkit.fluxcd.io/v1beta1
+kind: Provider
+metadata:
+  name: testkube-flux2-generic
+spec:
+  type: generic
+  secretRef:
+    name: testkube-flux2-url

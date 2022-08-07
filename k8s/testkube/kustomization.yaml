@@ -4,7 +4,8 @@ kind: Kustomization
 namespace: testkube
 
 resources:
-  - testkube-flux2-receiver.yaml
+  - testkube-flux2-deployment.yaml
+  - testkube-flux2-service.yaml
 
 # images:
 #  - name: testkube-flux2-receiver
