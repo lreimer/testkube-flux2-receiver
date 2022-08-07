@@ -18,4 +18,4 @@ build:
 deploy:
   kustomize:
     defaultNamespace: testkube
-    paths: ["k8s"]
+    paths: ["k8s/testkube/"]

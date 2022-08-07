@@ -13,7 +13,6 @@ spec:
       labels:
         app: testkube-flux2-receiver
     spec:
-      serviceAccountName: testkube-flux2-receiver
       containers:
       - name: testkube-flux2-receiver
         image: lreimer/testkube-flux2-receiver

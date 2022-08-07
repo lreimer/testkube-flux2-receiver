@@ -7,4 +7,4 @@ local_resource('testkube-flux2-receiver-build',
 
 # to disable push with rancher desktop we need to use custom_build instead of docker_build
 custom_build('lreimer/testkube-flux2-receiver', 'docker build -t $EXPECTED_REF .', ['./Dockerfile'], disable_push=True)
-k8s_yaml(kustomize('./k8s/'))
+k8s_yaml(kustomize('./k8s/testkube/'))
